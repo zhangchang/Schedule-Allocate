@@ -8,7 +8,7 @@ public class Prime {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GetPrime pr = new GetPrimeBySieve();
-		pr.printPrimes(pr.getPrime(1000));
+		pr.printPrimes(pr.getPrime(1000000));
 	}
 
 	public static long[] getPrime1(long max_num) {
