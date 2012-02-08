@@ -9,9 +9,23 @@ package scheduleAllocate;
  */
 public class CommonConst {
 
-	public static String MEMBER_DUTY_DESIGNER = "designer";
+	/**
+	 * 成员职责：设计
+	 */
+	public static String MEMBER_DUTY_DESIGN = "Design";
 	
-	public static String MEMBER_DUTY_DEVELOPER = "developer";
+	/**
+	 * 成员职责：开发
+	 */
+	public static String MEMBER_DUTY_DEVELOP = "Develop";
 	
-	public static String MEMBER_DUTY_TESTER = "tester";
+	/**
+	 * 成员职责：测试CASE作成
+	 */
+	public static String MEMBER_DUTY_TESTCASEMAKE = "TestCaseMake";
+	
+	/**
+	 * 成员职责：测试CASE实施
+	 */
+	public static String MEMBER_DUTY_TESTEXEC = "TestExec";
 }

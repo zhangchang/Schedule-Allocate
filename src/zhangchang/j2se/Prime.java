@@ -8,7 +8,7 @@ public class Prime {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GetPrime pr = new GetPrimeBySieve();
-		pr.printPrimes(pr.getPrime(1000000));
+		System.out.print(pr.printPrimes(pr.getPrime(10000)));
 	}
 
 	public static long[] getPrime1(long max_num) {
@@ -44,8 +44,6 @@ public class Prime {
 
 		return primeLst;
 	}
-
-
 
 	public static void printPrimes(long[] primes) {
 		int max_len = 120;
