@@ -4,6 +4,7 @@
 package scheduleAllocate;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author zhangchang
@@ -75,12 +76,12 @@ public class Task {
 		this.taskExpectCost = taskExpectCost;
 	}
 
-	public Task getPrevTask() {
-		return prevTask;
+	public List<Task> getPrevTasks() {
+		return prevTasks;
 	}
 
-	public void setPrevTask(Task prevTask) {
-		this.prevTask = prevTask;
+	public void setPrevTasks(List<Task> prevTasks) {
+		this.prevTasks = prevTasks;
 	}
 
 	/**
@@ -126,6 +127,6 @@ public class Task {
 	/**
 	 * 前导任务
 	 */
-	private Task prevTask = null;
+	private List<Task> prevTasks = null;
 
 }
