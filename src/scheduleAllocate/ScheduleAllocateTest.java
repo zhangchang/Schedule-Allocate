@@ -1,13 +1,17 @@
 package scheduleAllocate;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class ScheduleAllocateTest {
 
 	/**
 	 * @param args
+	 * @throws ParseException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 
 		Member zhangchang = new Member();
@@ -20,7 +24,13 @@ public class ScheduleAllocateTest {
 
 		zhangchang.setMemberSkill(zhangchangSkill);
 
-		System.out.print(zhangchang);
+		WorkCalendar cal = new WorkCalendar();
+
+		// System.out.print(zhangchang);
+		SimpleDateFormat df = new SimpleDateFormat(CommonConst.DATE_FORMAT);
+		for (Date dd : cal.getCalendarHolidays()) {
+			System.out.println(df.format(dd));
+		}
 	}
 
 }

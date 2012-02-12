@@ -73,4 +73,15 @@ public class CommonConst {
 	 * 技能水平：很好
 	 */
 	public static double SKILL_LEVEL_BATTER = 1.5;
+	
+	public static Integer WORKDAY = Integer.valueOf(1);
+	
+	public static Integer HOLIDAY = Integer.valueOf(0);
+	
+	public static String DATE_FORMAT = "yyyyMMdd";
+	
+	public static String TIME_FORMAT = "HH:mm:ss";
+	
+	public static String DATETIME_FORMAT = "yyyyMMdd HH:mm:ss";
+	
 }
