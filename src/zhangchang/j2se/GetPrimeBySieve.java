@@ -60,7 +60,7 @@ public class GetPrimeBySieve implements GetPrime {
 
 		long timeafter = System.currentTimeMillis();
 
-		//System.out.println(timeafter - timebefore);
+		// System.out.println(timeafter - timebefore);
 
 		return primeLst;
 	}
