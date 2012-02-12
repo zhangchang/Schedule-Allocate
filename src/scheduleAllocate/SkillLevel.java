@@ -7,7 +7,7 @@ package scheduleAllocate;
  * @author zhangchang
  * 
  */
-public enum SkillLevelNew {
+public enum SkillLevel {
 	
 	/**
 	 *  ºÜ²î
