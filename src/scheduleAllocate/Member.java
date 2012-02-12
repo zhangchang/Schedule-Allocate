@@ -27,11 +27,11 @@ public class Member {
 		this.memberId = memberId;
 	}
 
-	public HashMap<WorkCategory, SkillLevel> getMemberSkill() {
+	public HashMap<WorkCategory, SkillLevelNew> getMemberSkill() {
 		return memberSkill;
 	}
 
-	public void setMemberSkill(HashMap<WorkCategory, SkillLevel> memberSkill) {
+	public void setMemberSkill(HashMap<WorkCategory, SkillLevelNew> memberSkill) {
 		this.memberSkill = memberSkill;
 	}
 
@@ -48,5 +48,5 @@ public class Member {
 	/**
 	 * 人员技能水平
 	 */
-	private HashMap<WorkCategory, SkillLevel> memberSkill = null;
+	private HashMap<WorkCategory, SkillLevelNew> memberSkill = null;
 }
