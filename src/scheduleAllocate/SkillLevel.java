@@ -10,27 +10,27 @@ package scheduleAllocate;
 public enum SkillLevel {
 	
 	/**
-	 * 很差
+	 *  很差
 	 */
 	WORSE, 
 	
 	/**
-	 * 差
+	 *  差
 	 */
 	BAD, 
 	
 	/**
-	 * 一般
+	 *  一般
 	 */
 	NORMAL, 
 	
 	/**
-	 * 好
+	 *  好
 	 */
 	GOOD, 
 	
 	/**
-	 * 很好
+	 *  很好
 	 */
 	BATTER,
 }
