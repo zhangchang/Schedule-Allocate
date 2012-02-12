@@ -8,29 +8,29 @@ package scheduleAllocate;
  * 
  */
 public enum Skill {
-	
+
 	/**
-	 *  很差
+	 * 很差
 	 */
-	WORSE, 
-	
+	WORSE,
+
 	/**
-	 *  差
+	 * 差
 	 */
-	BAD, 
-	
+	BAD,
+
 	/**
-	 *  一般
+	 * 一般
 	 */
-	NORMAL, 
-	
+	NORMAL,
+
 	/**
-	 *  好
+	 * 好
 	 */
-	GOOD, 
-	
+	GOOD,
+
 	/**
-	 *  很好
+	 * 很好
 	 */
 	BATTER,
 }
