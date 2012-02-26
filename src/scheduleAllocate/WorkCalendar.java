@@ -24,18 +24,24 @@ public class WorkCalendar {
 
 	private ArrayList<Date> calendarHolidays = null;
 
+	/**
+	 * 默认构造函数
+	 * 
+	 * @throws ParseException
+	 */
 	public WorkCalendar() throws ParseException {
-		calendarStartDay = getDefaultStartDay();
-		calendarEndDay = getDefaultEndDay();
-		calendarHolidays = new ArrayList<Date>();
+		this.setCalendarName(CommonConst.DEFAULT_CALENDAR_NAME);
+		this.setCalendarStartDay(defaultStartDay());
+		this.setCalendarEndDay(defaultEndDay());
+		ArrayList<Date> holidays = new ArrayList<Date>();
 
-		Calendar calStartDay = dateToCalendar(calendarStartDay);
-		Calendar calEndDay = dateToCalendar(calendarEndDay);
+		Calendar calStartDay = dateToCalendar(this.getCalendarStartDay());
+		Calendar calEndDay = dateToCalendar(this.getCalendarEndDay());
 
 		while (calStartDay.compareTo(calEndDay) <= 0) {
 			if ((calStartDay.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY)
 					|| (calStartDay.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)) {
-				calendarHolidays.add(calStartDay.getTime());
+				holidays.add(calStartDay.getTime());
 			}
 			calStartDay.add(Calendar.DAY_OF_MONTH, 1);
 		}
@@ -51,20 +57,60 @@ public class WorkCalendar {
 		return new GregorianCalendar(year, month, day);
 	}
 
+	/**
+	 * 返回CommonConst.DEFAULT_YEARS年后的12月31日
+	 * 
+	 * @return 日历结束日期
+	 * @throws ParseException
+	 */
+	private Date defaultEndDay() throws ParseException {
+		SimpleDateFormat df = new SimpleDateFormat(CommonConst.DATE_FORMAT);
+		int startYear = Calendar.getInstance().get(Calendar.YEAR);
+		return df.parse(String.valueOf(startYear + CommonConst.DEFAULT_YEARS).concat("1231"));
+	}
+
+	/**
+	 * 返回CommonConst.DEFAULT_YEARS年前的1月1日
+	 * 
+	 * @return 日历开始日期
+	 * @throws ParseException
+	 */
+	private Date defaultStartDay() throws ParseException {
+		SimpleDateFormat df = new SimpleDateFormat(CommonConst.DATE_FORMAT);
+		int startYear = Calendar.getInstance().get(Calendar.YEAR);
+		return df.parse(String.valueOf(startYear - CommonConst.DEFAULT_YEARS).concat("0101"));
+	}
+
+	public Date getCalendarEndDay() {
+		return calendarEndDay;
+	}
+
 	public ArrayList<Date> getCalendarHolidays() {
 		return calendarHolidays;
 	}
 
-	private Date getDefaultEndDay() throws ParseException {
-		SimpleDateFormat df = new SimpleDateFormat(CommonConst.DATE_FORMAT);
-		int startYear = Calendar.getInstance().get(Calendar.YEAR);
-		return df.parse(String.valueOf(startYear + 5).concat("1231"));
+	public String getCalendarName() {
+		return calendarName;
 	}
 
-	private Date getDefaultStartDay() throws ParseException {
-		SimpleDateFormat df = new SimpleDateFormat(CommonConst.DATE_FORMAT);
-		int startYear = Calendar.getInstance().get(Calendar.YEAR);
-		return df.parse(String.valueOf(startYear - 5).concat("0101"));
+	public Date getCalendarStartDay() {
+		return calendarStartDay;
+	}
+
+	public void setCalendarEndDay(Date calendarEndDay) {
+		this.calendarEndDay = calendarEndDay;
+	}
+
+	public void setCalendarHolidays(ArrayList<Date> calendarHolidays) {
+		this.calendarHolidays = calendarHolidays;
+	}
+
+	public void setCalendarName(String calendarName) {
+		this.calendarName = calendarName;
+	}
+
+	public void setCalendarStartDay(Date calendarStartDay) {
+		this.calendarStartDay = calendarStartDay;
 	}
 
 }

@@ -7,7 +7,7 @@ package scheduleAllocate;
  * @author zhangchang
  * 
  */
-public class CommonConst {
+public interface CommonConst {
 
 	/**
 	 * 工作种类：设计
@@ -74,14 +74,33 @@ public class CommonConst {
 	 */
 	public static double SKILL_LEVEL_BATTER = 1.5;
 	
+	/**
+	 * 默认年份间隔(WorkCalendar构造函数用)
+	 */
+	public static int DEFAULT_YEARS = 5;
+	
 	public static Integer WORKDAY = Integer.valueOf(1);
 	
 	public static Integer HOLIDAY = Integer.valueOf(0);
 	
+	/**
+	 * 日期格式
+	 */
 	public static String DATE_FORMAT = "yyyyMMdd";
 	
+	/**
+	 * 时间格式
+	 */
 	public static String TIME_FORMAT = "HH:mm:ss";
 	
+	/**
+	 * 日期+时间格式
+	 */
 	public static String DATETIME_FORMAT = "yyyyMMdd HH:mm:ss";
+	
+	/**
+	 * 默认日历名称
+	 */
+	public static String DEFAULT_CALENDAR_NAME = "DefaultCalendar";
 	
 }
