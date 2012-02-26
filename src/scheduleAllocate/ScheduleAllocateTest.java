@@ -14,15 +14,25 @@ public class ScheduleAllocateTest {
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 
-		Member zhangchang = new Member();
-		zhangchang.setMemberId(1);
-		zhangchang.setMemberName("张昶");
-		HashMap<WorkCategory, SkillLevel> zhangchangSkill = new HashMap<WorkCategory, SkillLevel>();
-		zhangchangSkill.put(WorkCategory.DESIGN, SkillLevel.NORMAL);
-		zhangchangSkill.put(WorkCategory.DESIGN_REVIEW, SkillLevel.GOOD);
-		zhangchangSkill.put(WorkCategory.TESTCASE_REVIEW, SkillLevel.BATTER);
+		Member Zhangsan = new Member();
+		Zhangsan.setMemberId(1);
+		Zhangsan.setMemberName("张三");
+		HashMap<WorkCategory, SkillLevel> zhangsanSkill = new HashMap<WorkCategory, SkillLevel>();
+		zhangsanSkill.put(WorkCategory.DESIGN, SkillLevel.NORMAL);
+		zhangsanSkill.put(WorkCategory.DESIGN_REVIEW, SkillLevel.GOOD);
+		zhangsanSkill.put(WorkCategory.TESTCASE_REVIEW, SkillLevel.BATTER);
 
-		zhangchang.setMemberSkill(zhangchangSkill);
+		Zhangsan.setMemberSkill(zhangsanSkill);
+		
+		Member Lisi = new Member();
+		Lisi.setMemberId(1);
+		Lisi.setMemberName("李四");
+		HashMap<WorkCategory, SkillLevel> LisiSkill = new HashMap<WorkCategory, SkillLevel>();
+		LisiSkill.put(WorkCategory.DESIGN, SkillLevel.NORMAL);
+		LisiSkill.put(WorkCategory.DESIGN_REVIEW, SkillLevel.GOOD);
+		LisiSkill.put(WorkCategory.TESTCASE_REVIEW, SkillLevel.BATTER);
+
+		Lisi.setMemberSkill(LisiSkill);
 
 		WorkCalendar cal = new WorkCalendar();
 

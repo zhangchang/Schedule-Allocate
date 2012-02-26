@@ -7,7 +7,7 @@ package scheduleAllocate;
  * @author zhangchang
  * 
  */
-public class CommonConst {
+public interface CommonConst {
 
 	/**
 	 * 工作种类：设计
@@ -83,5 +83,7 @@ public class CommonConst {
 	public static String TIME_FORMAT = "HH:mm:ss";
 	
 	public static String DATETIME_FORMAT = "yyyyMMdd HH:mm:ss";
+	
+	public static String DEFAULT_CALENDAR_NAME = "DefaultCalendar";
 	
 }

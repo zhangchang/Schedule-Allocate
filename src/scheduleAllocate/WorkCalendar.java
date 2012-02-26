@@ -25,6 +25,7 @@ public class WorkCalendar {
 	private ArrayList<Date> calendarHolidays = null;
 
 	public WorkCalendar() throws ParseException {
+		calendarName = CommonConst.DEFAULT_CALENDAR_NAME;
 		calendarStartDay = getDefaultStartDay();
 		calendarEndDay = getDefaultEndDay();
 		calendarHolidays = new ArrayList<Date>();
