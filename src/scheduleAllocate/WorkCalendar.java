@@ -46,6 +46,7 @@ public class WorkCalendar {
 			calStartDay.add(Calendar.DAY_OF_MONTH, 1);
 		}
 
+		this.setCalendarHolidays(holidays);
 	}
 
 	private Calendar dateToCalendar(Date dt) {
