@@ -1,5 +1,6 @@
 package zhangchang.j2se;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -14,6 +15,8 @@ public class Sudoku {
 	public static String posRegex = "[1-9]{1}\\,[1-9]{1}";
 
 	public static int[][] sudukuMatrix;
+	
+	public static HashMap<String, ArrayList<Boolean>> numLib = null;
 	/**
 	 * @param args
 	 */
@@ -72,8 +75,27 @@ public class Sudoku {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public static void initEmptySudoku() {
 		sudukuMatrix = new int[ROW][ROW];
+		numLib = new HashMap<String, ArrayList<Boolean>>();
+		ArrayList<Boolean> numArr = new ArrayList<Boolean>();
+		for (int i=0;i<ROW;i++) {
+			numArr.add(true);
+		}
+		for(int i=0;i<ROW;i++) {
+			numLib.put("ROW"+String.valueOf(i), (ArrayList<Boolean>) numArr.clone());
+			numLib.put("COL"+String.valueOf(i), (ArrayList<Boolean>) numArr.clone());
+		}
+		numLib.put("BLOCK-0,0,2,2", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-0,3,2,5", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-0,6,2,8", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-3,0,5,2", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-3,3,5,5", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-3,6,5,8", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-6,0,8,2", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-6,3,8,5", (ArrayList<Boolean>) numArr.clone());
+		numLib.put("BLOCK-6,6,8,8", (ArrayList<Boolean>) numArr.clone());
 	}
 
 	public static void initSudoku(HashMap<String, Integer> mpOrgDate) {
@@ -100,6 +122,16 @@ public class Sudoku {
 			int posCol = new Integer(pos.split(",")[1]).intValue();
 
 			sudukuMatrix[posRow - 1][posCol - 1] = value.intValue();
+			
+			numLib.get("ROW"+String.valueOf(posRow - 1)).set(value.intValue()-1, false);
+			numLib.get("COL"+String.valueOf(posCol - 1)).set(value.intValue()-1, false);
+			
+			int maxRow = ((posRow - 1) / 3 + 1) * 3 - 1;
+			int minRow = (posRow - 1) / 3 * 3;
+			int maxCol = ((posCol - 1) / 3 + 1) * 3 - 1;
+			int minCol = (posCol - 1) / 3 * 3;
+			
+			numLib.get("BLOCK-"+String.valueOf(minRow)+","+String.valueOf(minCol)+","+String.valueOf(maxRow)+","+String.valueOf(maxCol)).set(value.intValue()-1, false);
 		}
 
 		if (!checkSudoku())
@@ -167,6 +199,10 @@ public class Sudoku {
 	}
 	
 	public static void completeSudoku() {
-		 
+		
+	}
+	
+	private boolean getNumFromLib(int num, String libName) {
+		return numLib.get(libName).get(num-1);
 	}
 }
